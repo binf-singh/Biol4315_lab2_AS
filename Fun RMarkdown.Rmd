@@ -26,11 +26,24 @@ log_dune2 <- log1p(dune2)
 
 
 ```{r transformation, message = F, warning = F}
-# Perform nmds on dune2 and extract points from nmds 
+# The following code chunk performs a nmds on dune2 and extract points from nmds 
 meta_dune2 <- metaMDS(dune2)
 dpoint <- meta_dune2$points
+```
+
+
+```{r plot, essage = F, warning = F}
+# The following code chunk creates a scatter plot using dpoint
+
+# Transform dpoint into dataframe 
+df_points <- as.data.frame(dpoint)
+
+# Create scatter plot 
+ggplot(df_points, aes(x=MDS1, y=MDS2)) + geom_point() + ggtitle("Scatter Plot of nmds on Log Transformed Dune Data")
+
 
 ```
+
 
 
 ## Including Plots
