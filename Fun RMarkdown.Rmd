@@ -14,12 +14,21 @@ library("vegan")
 library("ggplot2")
 ```
 
+
 ```{r dune, message = F, warning = F}
 # The following code chunk loads the dune data from the vegan package and preforms a log transformation using the log1p function
 
 data(dune)
 dune2 <- dune
-dune2_log <- log1p(dune2)
+log_dune2 <- log1p(dune2)
+
+```
+
+
+```{r transformation, message = F, warning = F}
+# Perform nmds on dune2 and extract points from nmds 
+meta_dune2 <- metaMDS(dune2)
+dpoint <- meta_dune2$points
 
 ```
 
