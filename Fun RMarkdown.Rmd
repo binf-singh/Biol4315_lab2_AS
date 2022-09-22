@@ -8,11 +8,10 @@ output: html_document
 ```{r intro, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-# Installing Packages
-
-
-```{r cars}
-summary(cars)
+# Loading Libraries
+```{r library, message = F, warning = F}
+library("vegan")
+library("ggplot2")
 ```
 
 ## Including Plots
