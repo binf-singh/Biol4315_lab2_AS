@@ -32,26 +32,26 @@ dpoint <- meta_dune2$points
 ```
 
 
-```{r plot, essage = F, warning = F}
+```{r plot, message = F, warning = F}
 # The following code chunk creates a scatter plot using dpoint
 
 # Transform dpoint into dataframe 
 df_points <- as.data.frame(dpoint)
 
 # Create scatter plot 
-ggplot(df_points, aes(x=MDS1, y=MDS2)) + geom_point() + ggtitle("Scatter Plot of nmds on Log Transformed Dune Data")
+nmds_plot <- ggplot(df_points, aes(x=MDS1, y=MDS2)) + geom_point() + ggtitle("Scatter Plot of nmds on Log Transformed Dune Data") + theme_bw()
+
+# Display scatter plot
+nmds_plot
 
 
 ```
 
 
+```{r output, message = F, warning = F}
+# The following code chunk outputs the Dune NMDS plot as a PDF
 
-## Including Plots
+ggsave("Dune_nmds_plot.pdf", plot = nmds_plot, device = "pdf")
 
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
