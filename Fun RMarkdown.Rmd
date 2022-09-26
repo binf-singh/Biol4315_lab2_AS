@@ -8,13 +8,13 @@ output: html_document
 ```{r intro, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-# Loading Libraries
+## Loading Libraries
 ```{r library, message = F, warning = F}
 library("vegan")
 library("ggplot2")
 ```
 
-
+## Load Data
 ```{r dune, message = F, warning = F}
 # The following code chunk loads the dune data from the vegan package and preforms a log transformation using the log1p function
 
@@ -24,14 +24,14 @@ log_dune2 <- log1p(dune2)
 
 ```
 
-
+## Extract Points
 ```{r transformation, message = F, warning = F}
 # The following code chunk performs a nmds on dune2 and extract points from nmds 
 meta_dune2 <- metaMDS(dune2)
 dpoint <- meta_dune2$points
 ```
 
-
+## Create Scatter Plot
 ```{r plot, message = F, warning = F}
 # The following code chunk creates a scatter plot using dpoint
 
@@ -47,7 +47,7 @@ nmds_plot
 
 ```
 
-
+## Save as PDF
 ```{r output, message = F, warning = F}
 # The following code chunk outputs the Dune NMDS plot as a PDF
 
